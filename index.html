@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rei dos Macacos</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    #pessoas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+
+    #pessoas img {
+      width: 80px;
+      height: 80px;
+      margin: 0 10px;
+      border-radius: 50%;
+    }
+
+    #pessoa-centralizada {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+    }
+
+    #pessoa-centralizada img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+    
+    body {
+      background-image: url("https://th.bing.com/th/id/R.ee69fdbebeb3daf9212f611010f7ba06?rik=gowuU2QBGvEDYw&pid=ImgRaw&r=0");
+      background-size: cover;
+      background-position: center center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rei dos Macacos</h1>
+  <div id="pessoas">
+    <img src="OIP1.jpg">
+    <img src="OIP2.jpg">
+    <img src="OIP3.jpg">
+    <img src="OIP4.jpg">
+  </div>
+  <div id="pessoa-centralizada">
+    <img src="Mamaco.jpg">
+  </div>
+  <audio controls autoplay>
+    <source src="https://soundcloud.com/alisson-batata/d4vd-romantic-homicide-official-music-video?si=ab373307f8ad4a42b72a831837608020&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+    Your browser does not support the audio element.
+  </audio>
+  <script>
+    let pessoas = document.getElementById('pessoas');
+    let movimento = 0;
+    let limite = (pessoas.children.length - 1) * 100;
+
+    function moverPessoas() {
+      movimento -= 100;
+      if (movimento < -limite) {
+        movimento = 0;
+      }
+      pessoas.style.transform = `translateX(${movimento}px)`;
+    }
+
+    setInterval(moverPessoas, 2000);
+  </script>
+</body>
+</html>
